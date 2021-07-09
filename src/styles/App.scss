@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.App {
+  width: 100vw;
+  height: 100vh;
+  @include center();
+  .container {
+    height: 100%;
+    width: 700px;
+    background-color: aquamarine;
+  }
+}
