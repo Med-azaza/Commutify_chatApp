@@ -26,9 +26,8 @@ function App() {
     setHt(window.innerHeight);
   });
   useEffect(() => {
-    console.log(`${window.innerHeight.toString()} px`);
     document.querySelector(".App").style.height = window.innerHeight + "px";
-  }, [ht]);
+  }, []);
   return (
     <div className="App">
       <div className="container">
