@@ -1,5 +1,5 @@
 import "./styles/App.css";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
@@ -21,9 +21,14 @@ const firestore = firebase.firestore();
 
 function App() {
   const [user] = useAuthState(auth);
+  const [ht, setHt] = useState(window.innerHeight);
+  window.addEventListener("resize", () => {
+    setHt(window.innerHeight);
+  });
   useEffect(() => {
-    document.querySelector(".App").style.height = window.innerHeight;
-  }, []);
+    console.log(`${window.innerHeight.toString()} px`);
+    document.querySelector(".App").style.height = window.innerHeight + "px";
+  }, [ht]);
   return (
     <div className="App">
       <div className="container">
