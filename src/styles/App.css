@@ -3,6 +3,8 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
 }
 
 .App {
@@ -24,6 +26,56 @@
   height: 100%;
   width: 700px;
   background-color: #16202c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.App .container .signin {
+  width: 140px;
+  height: 140px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  row-gap: 30px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 0.8em;
+  cursor: pointer;
+  border: 3px solid rgba(255, 255, 255, 0.329);
+}
+
+.App .container .signin div {
+  color: #00c853;
+  font-size: 3em;
+  background-color: transparent;
+  border: 0;
+  width: 50px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .App .container .Chatroom {
@@ -38,7 +90,8 @@
   text-align: center;
 }
 
-.App .container .Chatroom .msg {
+.App .container .Chatroom .msg,
+.App .container .Chatroom .mymsg {
   position: relative;
   padding: 10px 10px 20px 10px;
   display: -webkit-box;
@@ -50,34 +103,31 @@
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
   min-height: 80px;
   -webkit-column-gap: 8px;
           column-gap: 8px;
 }
 
-.App .container .Chatroom .msg .infos {
+.App .container .Chatroom .msg .infos,
+.App .container .Chatroom .mymsg .infos {
   position: absolute;
-  bottom: 0;
-  right: 60px;
   color: #4c505c;
   font-weight: 700;
   font-size: 0.8em;
+  bottom: 0;
 }
 
-.App .container .Chatroom .msg img {
+.App .container .Chatroom .msg img,
+.App .container .Chatroom .mymsg img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   border: 2px solid #3e4555;
 }
 
-.App .container .Chatroom .msg .msg-value {
+.App .container .Chatroom .msg .msg-value,
+.App .container .Chatroom .mymsg .msg-value {
   width: 60%;
-  background-color: #358066;
   min-height: 50px;
   padding: 10px;
   display: -webkit-box;
@@ -92,14 +142,81 @@
   border-radius: 8px;
 }
 
-.App .container .Chatroom .msg .msg-value p {
+.App .container .Chatroom .msg .msg-value p,
+.App .container .Chatroom .mymsg .msg-value p {
   color: #fff;
 }
 
-.App .container .Chatroom > div {
+.App .container .Chatroom .msg {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.App .container .Chatroom .msg .infos {
+  left: 60px;
+}
+
+.App .container .Chatroom .msg .msg-value {
+  background-color: #586066;
+}
+
+.App .container .Chatroom .mymsg {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.App .container .Chatroom .mymsg .infos {
+  bottom: 0;
+  right: 60px;
+}
+
+.App .container .Chatroom .mymsg .msg-value {
+  background-color: #00c853;
+}
+
+.App .container .Chatroom .main {
   width: 100%;
-  height: 90%;
+  height: 80%;
   overflow: auto;
+}
+
+.App .container .Chatroom .header {
+  height: 10%;
+  width: 100%;
+  background-color: transparent;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 25px;
+}
+
+.App .container .Chatroom .header button {
+  background-color: transparent;
+  border: 0;
+  width: 40px;
+  height: 40px;
+  font-size: 2em;
+  color: #00c853;
+  cursor: pointer;
+}
+
+.App .container .Chatroom .header h6 {
+  font-size: 1.4em;
+  color: #00c853;
+  font-weight: 700;
+  font-family: "Lobster", cursive;
+  letter-spacing: 3px;
 }
 
 .App .container .Chatroom .msg-form {
@@ -141,18 +258,14 @@
   background-color: transparent;
   border: none;
   outline: none;
-  color: #358066;
+  color: #00c853;
   font-size: 25px;
   cursor: pointer;
-  opacity: 0.5;
 }
 
 .App .container .Chatroom .msg-form div button:disabled {
   color: gray;
   cursor: initial;
-}
-
-.App .container .Chatroom .msg-form div button:hover {
-  opacity: 1;
+  opacity: 0.8;
 }
 /*# sourceMappingURL=App.css.map */

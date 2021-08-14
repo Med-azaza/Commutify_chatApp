@@ -10,8 +10,11 @@ const SignIn = ({ auth }) => {
     auth.signInWithPopup(provider);
   };
   return (
-    <div>
-      <button onClick={signInWithGoogle}>sign in with google</button>
+    <div onClick={signInWithGoogle} className="signin">
+      <div>
+        <i className="fab fa-google"></i>
+      </div>
+      Sign in with google
     </div>
   );
 };

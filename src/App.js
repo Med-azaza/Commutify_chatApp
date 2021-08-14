@@ -5,7 +5,6 @@ import "firebase/firestore";
 import "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 
-import SignOut from "./components/signout";
 import SignIn from "./components/signin";
 import Chatroom from "./components/chatroom";
 
@@ -24,7 +23,6 @@ function App() {
   const [user] = useAuthState(auth);
   return (
     <div className="App">
-      <SignOut auth={auth} />
       <div className="container">
         {user ? (
           <Chatroom firestore={firestore} auth={auth} />

@@ -7,7 +7,9 @@ const SignOut = ({ auth }) => {
   return (
     auth.currentUser && (
       <div>
-        <button onClick={() => auth.signOut()}>sign out</button>
+        <button onClick={() => auth.signOut()}>
+          <i className="fas fa-sign-out-alt"></i>
+        </button>
       </div>
     )
   );

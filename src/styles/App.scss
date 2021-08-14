@@ -2,23 +2,47 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
 }
-$main: #358066;
-@mixin center {
+// $main: #358066;
+$main: #00c853;
+@mixin center($align, $justify) {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: $align;
+  justify-content: $justify;
 }
 .App {
   width: 100vw;
   height: 100vh;
   background-color: #d3d5db;
-  @include center();
+  @include center(center, center);
   .container {
     height: 100%;
     width: 700px;
     // overflow: auto;
     background-color: #16202c;
+    @include center(center, center);
+    .signin {
+      width: 140px;
+      height: 140px;
+      color: white;
+      @include center(center, center);
+      row-gap: 30px;
+      flex-direction: column;
+      font-size: 0.8em;
+      cursor: pointer;
+      border: 3px solid rgba(255, 255, 255, 0.329);
+      div {
+        color: $main;
+        font-size: 3em;
+        background-color: transparent;
+        border: 0;
+        width: 50px;
+        height: 50px;
+        @include center(center, center);
+      }
+    }
     .Chatroom {
       position: relative;
       width: 100%;
@@ -28,23 +52,19 @@ $main: #358066;
         font-weight: 700;
         text-align: center;
       }
-      .msg {
+      .msg,
+      .mymsg {
         position: relative;
         padding: 10px 10px 20px 10px;
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-start;
-        flex-direction: row-reverse;
-        // margin: 10px 0;
+        @include center(flex-start, flex-start);
         min-height: 80px;
         column-gap: 8px;
         .infos {
           position: absolute;
-          bottom: 0;
-          right: 60px;
           color: #4c505c;
           font-weight: 700;
           font-size: 0.8em;
+          bottom: 0;
         }
         img {
           width: 40px;
@@ -54,7 +74,6 @@ $main: #358066;
         }
         .msg-value {
           width: 60%;
-          background-color: $main;
           min-height: 50px;
           padding: 10px;
           display: flex;
@@ -66,16 +85,59 @@ $main: #358066;
           }
         }
       }
-      & > div {
+      .msg {
+        flex-direction: row;
+        .infos {
+          left: 60px;
+        }
+        .msg-value {
+          background-color: #586066;
+        }
+      }
+      .mymsg {
+        flex-direction: row-reverse;
+        .infos {
+          bottom: 0;
+          right: 60px;
+        }
+        .msg-value {
+          background-color: $main;
+        }
+      }
+      .main {
         width: 100%;
-        height: 90%;
+        height: 80%;
         overflow: auto;
+      }
+      .header {
+        height: 10%;
+        width: 100%;
+        background-color: transparent;
+        color: #fff;
+        @include center(center, space-between);
+        padding: 0 25px;
+        button {
+          background-color: transparent;
+          border: 0;
+          width: 40px;
+          height: 40px;
+          font-size: 2em;
+          color: $main;
+          cursor: pointer;
+        }
+        h6 {
+          font-size: 1.4em;
+          color: $main;
+          font-weight: 700;
+          font-family: "Lobster", cursive;
+          letter-spacing: 3px;
+        }
       }
       .msg-form {
         background-color: #16202c;
         width: 100%;
         height: 10%;
-        @include center();
+        @include center(center, center);
         div {
           width: 95%;
           height: 80%;
@@ -100,13 +162,10 @@ $main: #358066;
             color: $main;
             font-size: 25px;
             cursor: pointer;
-            opacity: 0.5;
             &:disabled {
               color: gray;
               cursor: initial;
-            }
-            &:hover {
-              opacity: 1;
+              opacity: 0.8;
             }
           }
         }

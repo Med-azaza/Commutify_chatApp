@@ -1,4 +1,4 @@
-const Msg = ({ message, day }) => {
+const Msg = ({ message, day, myMessage }) => {
   const { user, body, uid, photoURL, createdAt } = message;
   return (
     <div>
@@ -7,7 +7,7 @@ const Msg = ({ message, day }) => {
           createdAt.split(" ")[2]
         } ${createdAt.split(" ")[3]}`}</div>
       )}
-      <div data-id={uid} className="msg">
+      <div data-id={uid} className={`${myMessage ? "mymsg" : "msg"}`}>
         <img src={photoURL} alt="" />
         <div className="msg-value">
           <p>{body}</p>
