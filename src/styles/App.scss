@@ -74,14 +74,17 @@ $main: #00c853;
         }
         .msg-value {
           width: 60%;
+          max-width: 60%;
           min-height: 50px;
           padding: 10px;
           display: flex;
           align-items: center;
           justify-content: flex-start;
           border-radius: 8px;
+
           p {
             color: #fff;
+            word-break: break-all;
           }
         }
       }

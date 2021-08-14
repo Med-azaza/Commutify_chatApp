@@ -128,6 +128,7 @@
 .App .container .Chatroom .msg .msg-value,
 .App .container .Chatroom .mymsg .msg-value {
   width: 60%;
+  max-width: 60%;
   min-height: 50px;
   padding: 10px;
   display: -webkit-box;
@@ -145,6 +146,7 @@
 .App .container .Chatroom .msg .msg-value p,
 .App .container .Chatroom .mymsg .msg-value p {
   color: #fff;
+  word-break: break-all;
 }
 
 .App .container .Chatroom .msg {
