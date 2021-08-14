@@ -189,6 +189,7 @@
 .App .container .Chatroom .header {
   height: 10%;
   width: 100%;
+  min-height: 60px;
   background-color: transparent;
   color: #fff;
   display: -webkit-box;

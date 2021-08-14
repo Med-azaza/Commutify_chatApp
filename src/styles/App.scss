@@ -115,6 +115,7 @@ $main: #00c853;
       .header {
         height: 10%;
         width: 100%;
+        min-height: 60px;
         background-color: transparent;
         color: #fff;
         @include center(center, space-between);
