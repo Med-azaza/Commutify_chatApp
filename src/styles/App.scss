@@ -77,11 +77,8 @@ $main: #00c853;
           max-width: 60%;
           min-height: 50px;
           padding: 10px;
-          display: flex;
-          align-items: center;
-          justify-content: flex-start;
+          @include center(center, flex-start);
           border-radius: 8px;
-
           p {
             color: #fff;
             word-break: break-all;
